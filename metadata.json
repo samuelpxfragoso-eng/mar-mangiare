@@ -1,0 +1,6 @@
+{
+  "name": "Maré Mangiare",
+  "description": "Restaurante, Pizzaria e Gastrobar na Praia do Francês. Experiência gastronômica com pizzas artesanais, frutos do mar e o melhor Aperol Spritz da região.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

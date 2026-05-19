@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mare-navy: #3B281B;
+  --color-mare-orange: #D98834;
+  --color-mare-gold: #5E4D34;
+  --color-mare-cream: #E5DBD0;
+  --color-mare-teal: #008080;
+  --color-mare-text: #333333;
+  
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-mare-cream text-mare-navy selection:bg-mare-orange/20 selection:text-mare-navy;
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight text-mare-gold;
+  }
+}
+
+.mare-gradient {
+  background: linear-gradient(135deg, #3B281B 0%, #5E4D34 100%);
+}
+
+.aperol-gradient {
+  background: linear-gradient(135deg, #D98834 0%, #FF8C00 100%);
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-mare-navy to-mare-gold;
+}
+
+.gold-glow {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.card-sophisticated {
+  @apply bg-white rounded-[24px] border border-mare-navy/5 shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-1;
+}
+
+/* Logo Animations */
+@keyframes shine {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  50%, 100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shine 3s infinite;
+}
+
+.whatsapp-float {
+  @apply fixed bottom-8 left-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl flex items-center justify-center;
+  animation: pulse-whatsapp 2s infinite;
+}
+
+@keyframes pulse-whatsapp {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); transform: scale(1); }
+  70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); transform: scale(1.05); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); transform: scale(1); }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.logo-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shine 3s infinite;
+}
+
+.logo-reflection {
+  @apply relative;
+}
+
+.logo-reflection::before {
+  content: "";
+  @apply absolute -bottom-[10%] left-0 w-full h-[30%] bg-gradient-to-t from-white/20 to-transparent blur-[2px] opacity-40;
+  transform: scaleY(-1);
+}
+
+.logo-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.btn-whatsapp {
+  @apply bg-[#25D366] text-white shadow-xl hover:shadow-[#25D366]/40 transition-all duration-300 flex items-center justify-center gap-2;
+}
+
+.btn-ifood {
+  @apply bg-[#EA1D2C] text-white shadow-xl hover:shadow-[#EA1D2C]/40 transition-all duration-300 flex items-center justify-center gap-2;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.banner-gradient {
+  background: linear-gradient(90deg, #310b3d 0%, #FFD700 100%);
+}
+
