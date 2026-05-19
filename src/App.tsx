@@ -99,13 +99,22 @@ const Navbar = () => {
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-mare-orange transition-all group-hover:w-full"></span>
               </a>
             ))}
-            <a 
-              href="https://wa.me/5582991092725"
-              target="_blank"
-              className="btn-whatsapp btn-shine text-white px-7 py-3 rounded-full font-bold text-[11px] uppercase tracking-widest shadow-xl hover:shadow-[#25D366]/30 transition-all hover:-translate-y-1 active:scale-95"
-            >
-              <MessageCircle size={14} /> Reservar Mesa
-            </a>
+            <div className="flex items-center gap-3">
+              <a 
+                href="https://www.ifood.com.br/delivery/marechal-deodoro-al/restaurante-e-pizzaria-mare-mangiare-praia-do-frances-praia-do-frances/013fd2ba-02cd-43a4-8afb-36a291c64790"
+                target="_blank"
+                className="btn-ifood btn-shine text-white px-5 py-2.5 rounded-full font-bold text-[10px] uppercase tracking-widest shadow-lg hover:-translate-y-0.5 active:scale-95 transition-all"
+              >
+                <ShoppingBag size={14} /> iFood
+              </a>
+              <a 
+                href="https://api.whatsapp.com/send?phone=5582981935339&text=Ola,%20gostaria%20de%20reservar%20uma%20data%20para%20eventos."
+                target="_blank"
+                className="btn-whatsapp btn-shine text-white px-7 py-3 rounded-full font-bold text-[11px] uppercase tracking-widest shadow-xl hover:shadow-[#25D366]/30 transition-all hover:-translate-y-1 active:scale-95"
+              >
+                <MessageCircle size={14} /> Tira dúvidas e eventos
+              </a>
+            </div>
           </div>
 
           {/* Mobile Toggle */}
@@ -138,12 +147,12 @@ const Navbar = () => {
                 </a>
               ))}
               <a 
-                href="https://wa.me/5582991092725"
+                href="https://api.whatsapp.com/send?phone=5582981935339&text=Ola,%20gostaria%20de%20reservar%20uma%20data%20para%20eventos."
                 target="_blank"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="btn-whatsapp btn-shine text-white p-5 rounded-2xl font-bold text-center mt-4 uppercase text-xs tracking-widest shadow-xl"
               >
-                Garantir minha reserva
+                Tira dúvidas e eventos
               </a>
             </motion.div>
           )}
@@ -183,7 +192,7 @@ const Hero = () => {
             </span>
           </motion.div>
           
-          <h1 className="text-5xl md:text-[6.5rem] lg:text-[7.5rem] text-mare-gold mb-10 font-bold leading-[0.8] tracking-tighter mix-blend-multiply">
+          <h1 className="text-4xl md:text-[5.5rem] lg:text-[6.5rem] text-mare-gold mb-10 font-bold leading-[0.8] tracking-tighter mix-blend-multiply">
             Maresia, <br />
             <span className="text-mare-orange italic serif decoration-mare-orange/10 underline underline-offset-8">Vinho</span> e <br />
             Alta <span className="text-mare-teal">Pizza</span>.
@@ -203,18 +212,18 @@ const Hero = () => {
               Pedir agora
             </a>
             <a 
-              href="https://www.ifood.com.br/delivery/marechal-deodoro-al/restaurante-e-pizzaria-mare-mangiare-praia-do-frances-praia-do-frances/013fd2ba-02cd-43a4-8afb-36a291c64790" 
+              href="https://api.whatsapp.com/send?phone=5582981935339&text=Ola,%20gostaria%20de%20reservar%20uma%20data%20para%20eventos." 
               target="_blank"
-              className="bg-white/50 backdrop-blur-sm border-2 border-mare-orange/20 text-mare-orange px-14 py-7 rounded-2xl font-bold text-[12px] transition-all hover:-translate-y-1 active:scale-95 uppercase tracking-[0.25em] shadow-xl w-full sm:w-auto text-center inline-flex items-center justify-center gap-3"
+              className="btn-whatsapp btn-shine px-14 py-7 rounded-2xl font-bold text-[12px] transition-all hover:-translate-y-1 active:scale-95 uppercase tracking-[0.25em] shadow-xl w-full sm:w-auto text-center inline-flex items-center justify-center gap-3"
             >
-              <Utensils size={24} />
-              Menu iFood
+              <MessageCircle size={24} />
+              Tira dúvidas e eventos
             </a>
           </div>
         </motion.div>
 
         {/* Right Column: Three Videos Side-by-Side - Larger */}
-        <div className="lg:col-span-7 relative flex justify-center lg:justify-end gap-4 md:gap-6 items-center h-[600px] md:h-[750px] pt-12 lg:pt-0">
+        <div className="lg:col-span-7 relative flex justify-center lg:justify-end gap-3 md:gap-5 items-center h-[650px] md:h-[800px] pt-12 lg:pt-0">
              {[
                "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779154622/SnapInsta.to_AQMjqvbzv7xuZBzxIje_C8HUahVhLA0yWbUyugSN8IpxCgAbbVzaEyjF-VekVjaZ9oOClZEeQtQg1BhhawoqdSOO0R63CGKVYPm8xyw_hsmn4r.mp4",
                "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779157594/SnapInsta.to_AQNDFfS8jltBGHy93wt9vXX5rifYkTP0gORv5HNgFFXNj7oO63-qKFpW-krEyf-6aEOmh19zSnlBpz00kRx6Q8xdN1phgcLoOnKGqHY_gmdbwy.mp4",
@@ -225,7 +234,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 100, rotate: idx % 2 === 0 ? -3 : 3 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1.2, delay: 0.4 + idx * 0.15 }}
-                  className={`relative w-1/3 aspect-[9/16] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.7)] z-20 border-4 md:border-[10px] border-white backdrop-blur-md ${idx === 1 ? 'z-30 scale-125 -translate-y-16 mx-[-5%]' : 'z-10 opacity-70 mt-20'}`}
+                  className={`relative w-1/3 aspect-[9/16] rounded-[45px] md:rounded-[70px] overflow-hidden shadow-[0_60px_120px_rgba(0,0,0,0.8)] z-20 border-4 md:border-[12px] border-white backdrop-blur-md ${idx === 1 ? 'z-30 scale-135 -translate-y-20 mx-[-8%]' : 'z-10 opacity-70 mt-24'}`}
                 >
                     <video 
                         src={vid} 
@@ -566,9 +575,9 @@ const PizzaSection = () => {
             </div>
 
             <div className="mt-20 flex flex-col sm:flex-row justify-center items-center gap-6">
-                <a href="https://wa.me/5582991092725" target="_blank" className="btn-whatsapp btn-shine px-8 py-4 rounded-full transition-all font-bold text-[11px] uppercase tracking-widest group w-full sm:w-auto justify-center">
+                <a href="https://api.whatsapp.com/send?phone=5582981935339&text=Ola,%20gostaria%20de%20reservar%20uma%20data%20para%20eventos." target="_blank" className="btn-whatsapp btn-shine px-8 py-4 rounded-full transition-all font-bold text-[11px] uppercase tracking-widest group w-full sm:w-auto justify-center">
                     <MessageCircle size={18} />
-                    WhatsApp Maré
+                    Dúvidas e Eventos
                     <ChevronRight size={16} className="group-hover:translate-x-2 transition-transform" />
                 </a>
                 <a href="https://www.ifood.com.br/delivery/marechal-deodoro-al/restaurante-e-pizzaria-mare-mangiare-praia-do-frances-praia-do-frances/013fd2ba-02cd-43a4-8afb-36a291c64790" target="_blank" className="btn-ifood btn-shine px-8 py-4 rounded-full transition-all font-bold text-[11px] uppercase tracking-widest group w-full sm:w-auto justify-center">
@@ -719,12 +728,12 @@ const CucinaSection = () => {
             
             <div className="mt-20 flex flex-col sm:flex-row justify-center items-center gap-6">
                 <a 
-                  href="https://wa.me/5582991092725" 
+                  href="https://api.whatsapp.com/send?phone=5582981935339&text=Ola,%20gostaria%20de%20reservar%20uma%20data%20para%20eventos." 
                   target="_blank" 
                   className="btn-whatsapp btn-shine px-8 py-4 rounded-xl transition-all font-bold text-[11px] uppercase tracking-widest group w-full sm:w-auto justify-center"
                 >
                     <MessageCircle size={18} />
-                    WhatsApp Maré
+                    Dúvidas e Eventos
                     <ChevronRight size={16} className="group-hover:translate-x-2 transition-transform" />
                 </a>
                 <a 
@@ -834,11 +843,11 @@ const DrinksSection = () => {
 
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4 border-t border-mare-navy/5 pt-8">
                    <a 
-                      href="https://wa.me/5582991092725" 
+                      href="https://api.whatsapp.com/send?phone=5582981935339&text=Ola,%20gostaria%20de%20reservar%20uma%20data%20para%20eventos." 
                       target="_blank" 
                       className="btn-whatsapp btn-shine px-6 py-3 rounded-full transition-all font-bold text-[10px] uppercase tracking-widest"
                     >
-                        <MessageCircle size={14} /> WhatsApp
+                        <MessageCircle size={14} /> Dúvidas e Eventos
                     </a>
                     <div className="hidden sm:block w-1 h-1 bg-mare-navy/10 rounded-full" />
                     <a 
@@ -856,42 +865,75 @@ const DrinksSection = () => {
 };
 
 const ExperienceGallery = () => {
-    const images = [
-        "https://images.unsplash.com/photo-1544124499-58912cbddaad?q=80&w=2070&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1510629954389-c1e0da47d4ec?q=80&w=1974&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1594007654729-407eedc4be65?q=80&w=2056&auto=format&fit=crop"
+    const [isMuted, setIsMuted] = useState(true);
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const reels = [
+        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779164785/SnapInsta.to_AQN06hXFuOBprqCAwyrfsEbXAB15gYgp129KYe4vOYA9gU7QrPXOABHifIS6Pkg0g5Q2lt8Z5MLtIYw5P_BH-3qwcVTRBLklm99QCag_zahriq.mp4",
+        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779164806/SnapInsta.to_AQNMypdMcj6lURpQjmhjl9YNV9Cy0L5Rk8fjZF_FxJoi_g4b1A_eptDDj94M63lUetgauCfJ-elooPTh5BBYDz-KXzHvCd0fqkKPD9U_pa7lzb.mp4",
+        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779164872/SnapInsta.to_AQPuOjFmaeYmm4QWnzDEMq14sV4dWGJEs6hdb6hpNt0mWqorSg391scs6tfHipCApzaj3JSVlChyXNvk1O1HSiAnymjen04BASKyQfY_bzpchz.mp4",
+        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779165030/SnapInsta.to_AQMODxlbNT2QqYe3KA5xyWleG0Xc3Szeoaoxy_xkM0DFEc-HsLLHHsr_-Ccv2ocqeShlUHocNPV1ed4l9ckBEHU6pvLdQo2lb058-cA_b6fdxp.mp4"
     ];
 
     return (
-        <section id="experiencia" className="py-24 bg-mare-navy overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6">
+        <section id="experiencia" className="py-24 bg-mare-navy overflow-hidden relative">
+            {/* Background elements */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-mare-orange/5 rounded-full blur-[120px] -z-0" />
+            
+            <div className="max-w-7xl mx-auto px-6 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
                     <div className="text-white">
-                        <span className="text-[10px] uppercase font-bold tracking-[0.4em] text-mare-orange opacity-80 italic">Un Sapore d'Italia</span>
-                        <h2 className="text-5xl md:text-7xl font-display mt-4 italic">Noites <span className="text-mare-teal">Inesquecíveis</span></h2>
+                        <span className="text-[10px] uppercase font-bold tracking-[0.4em] text-mare-orange opacity-80 italic">Momenti Speciali</span>
+                        <h2 className="text-5xl md:text-7xl font-display mt-4 italic">Vibe <span className="text-mare-teal">Maré</span></h2>
+                        <p className="mt-6 text-white/50 text-sm max-w-md italic font-medium">Sinta a atmosfera única da nossa casa através dos nossos registros favoritos.</p>
                     </div>
-                    <a href="https://www.instagram.com/mare.mangiare" target="_blank" className="btn-shine flex items-center gap-3 bg-white text-mare-navy px-8 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-mare-orange hover:text-white transition-all shadow-2xl">
-                        Acompanhe no Instagram <Instagram size={18} />
-                    </a>
+                    
+                    <div className="flex items-center gap-4">
+                        <button 
+                            onClick={() => setIsMuted(!isMuted)}
+                            className="bg-white/10 hover:bg-white/20 p-4 rounded-full transition-all text-white border border-white/5"
+                        >
+                            {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                        </button>
+                        <a href="https://www.instagram.com/mare.mangiare?igsh=MXZxczdjcXd2MGpzZQ==" target="_blank" className="btn-shine flex items-center gap-3 bg-white text-mare-navy px-8 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-mare-orange hover:text-white transition-all shadow-2xl">
+                            Instagram <Instagram size={18} />
+                        </a>
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                    {images.map((img, i) => (
+                <div className="flex gap-6 overflow-x-auto no-scrollbar pb-12 cursor-grab active:cursor-grabbing snap-x">
+                    {reels.map((vid, i) => (
                         <motion.div 
                             key={i}
-                            whileHover={{ y: -20, scale: 1.02 }}
-                            className="aspect-[3/4] rounded-[32px] overflow-hidden shadow-2xl relative group"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            className="min-w-[280px] md:min-w-[320px] aspect-[9/16] rounded-[40px] overflow-hidden shadow-2xl relative group snap-start border-4 border-white/5"
                         >
-                            <img 
-                                src={img} 
-                                alt={`Experience ${i}`} 
-                                className="w-full h-full object-cover grayscale-[0.3] group-hover:grayscale-0 transition-all duration-700" 
+                            <video 
+                                src={vid} 
+                                className="w-full h-full object-cover" 
+                                autoPlay 
+                                muted={isMuted} 
+                                loop 
+                                playsInline 
                             />
-                            <div className="absolute inset-0 bg-mare-navy/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
-                                <Instagram className="text-white" size={28} />
+                            <div className="absolute inset-0 bg-gradient-to-t from-mare-navy/80 via-transparent to-transparent opacity-60 pointer-events-none" />
+                            <div className="absolute bottom-8 left-8 flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-md">
+                                    <Instagram className="text-white" size={14} />
+                                </div>
+                                <span className="text-[10px] font-bold text-white uppercase tracking-widest">@mare.mangiare</span>
                             </div>
                         </motion.div>
+                    ))}
+                </div>
+                
+                {/* Scroll Indicator */}
+                <div className="flex justify-center gap-2 mt-4 md:hidden">
+                    {reels.map((_, i) => (
+                        <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/20" />
                     ))}
                 </div>
             </div>
@@ -1096,6 +1138,105 @@ const GoogleEvaluation = () => {
     );
 };
 
+const FAQSection = () => {
+    const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+    const faqs = [
+        {
+            q: "Qual o horário de funcionamento?",
+            a: "Estamos abertos de Terça a Domingo, das 17h às 23h. Venha aproveitar o pôr do sol na Praia do Francês conosco."
+        },
+        {
+            q: "Onde o restaurante está localizado?",
+            a: "Estamos situados na charmosa galeria La Rue, o coração gastronômico da Praia do Francês em Marechal Deodoro - AL."
+        },
+        {
+            q: "Vocês aceitam reservas?",
+            a: "Sim! Altamente recomendado, especialmente para grupos e finais de semana. Você pode reservar clicando nos botões de WhatsApp do site."
+        },
+        {
+            q: "O restaurante é pet friendly?",
+            a: "Sim! Adoramos receber pets em nossa área externa. Traga seu companheiro de quatro patas para uma noite especial."
+        },
+        {
+            q: "Qual o tipo de culinária servida?",
+            a: "Unimos a tradição italiana das massas artesanais e pizzas de fermentação lenta com o frescor dos frutos do mar locais e toques autorais da Chef Rafa Cabral."
+        },
+        {
+            q: "Existem opções vegetarianas no menu?",
+            a: "Com certeza. Temos diversas opções de pizzas, entradas e massas pensadas especialmente para quem não consome carne."
+        },
+        {
+            q: "Há estacionamento no local?",
+            a: "Por estarmos em uma área de galeria charmosa, existem diversas opções de estacionamento público nas ruas transversais à La Rue."
+        },
+        {
+            q: "Vocês fazem delivery?",
+            a: "Sim! Atendemos toda a região da Praia do Francês e arredores através do iFood. Procure por Maré Mangiare no app."
+        },
+        {
+            q: "Quais as formas de pagamento aceitas?",
+            a: "Aceitamos todos os cartões de crédito e débito bancários, além de pagamentos via PIX e dinheiro."
+        },
+        {
+            q: "Como entrar em contato para eventos privados?",
+            a: "Possuímos pacotes especiais para aniversários e eventos corporativos. Entre em contato pelo botão 'Tira dúvidas e eventos' para mais detalhes."
+        }
+    ];
+
+    return (
+        <section className="py-24 px-6 bg-white relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-mare-teal/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
+            
+            <div className="max-w-4xl mx-auto relative z-10">
+                <div className="text-center mb-16">
+                    <span className="text-mare-orange font-bold text-[10px] uppercase tracking-[0.4em] mb-6 inline-block italic">Dúvidas Frequentes</span>
+                    <h2 className="text-5xl md:text-6xl text-mare-navy serif italic leading-tight">Perguntas <span className="text-mare-teal">Comuns</span></h2>
+                </div>
+
+                <div className="space-y-4">
+                    {faqs.map((faq, i) => (
+                        <motion.div 
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.05 }}
+                            className="border border-mare-navy/5 rounded-3xl overflow-hidden bg-mare-cream/30 hover:bg-white transition-all shadow-sm hover:shadow-xl hover:shadow-mare-navy/5"
+                        >
+                            <button 
+                                onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                                className="w-full p-6 md:p-8 flex items-center justify-between text-left group"
+                            >
+                                <span className="text-mare-navy font-bold text-base md:text-lg italic group-hover:text-mare-orange transition-colors pr-8">
+                                    {faq.q}
+                                </span>
+                                <div className={`shrink-0 w-8 h-8 rounded-full border border-mare-navy/10 flex items-center justify-center transition-transform duration-500 ${openIndex === i ? 'rotate-180 bg-mare-teal text-white border-mare-teal' : 'text-mare-navy/30'}`}>
+                                    <ChevronDown size={18} />
+                                </div>
+                            </button>
+                            <AnimatePresence>
+                                {openIndex === i && (
+                                    <motion.div
+                                        initial={{ height: 0, opacity: 0 }}
+                                        animate={{ height: "auto", opacity: 1 }}
+                                        exit={{ height: 0, opacity: 0 }}
+                                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                                    >
+                                        <div className="px-6 md:px-8 pb-8 text-mare-navy/60 text-sm md:text-base leading-relaxed border-t border-mare-navy/5 pt-4">
+                                            {faq.a}
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
 const Location = () => {
     return (
         <section id="localizacao" className="py-24 px-6 bg-white overflow-hidden">
@@ -1186,10 +1327,10 @@ const Footer = () => {
                         Cozinha afetiva, alma mediterrânea e o frescor da Praia do Francês em cada detalhe. 
                     </p>
                     <div className="flex gap-4">
-                        <a href="#" className="w-12 h-12 bg-white/5 hover:bg-mare-orange rounded-full flex items-center justify-center text-white transition-all border border-white/10">
+                        <a href="https://www.instagram.com/mare.mangiare?igsh=MXZxczdjcXd2MGpzZQ==" target="_blank" className="w-12 h-12 bg-white/5 hover:bg-mare-orange rounded-full flex items-center justify-center text-white transition-all border border-white/10">
                             <Instagram size={20} />
                         </a>
-                        <a href="#" className="w-12 h-12 bg-white/5 hover:bg-mare-orange rounded-full flex items-center justify-center text-white transition-all border border-white/10">
+                        <a href="https://api.whatsapp.com/send?phone=5582981935339&text=Ola,%20gostaria%20de%20reservar%20uma%20data%20para%20eventos." target="_blank" className="w-12 h-12 bg-white/5 hover:bg-mare-orange rounded-full flex items-center justify-center text-white transition-all border border-white/10">
                             <MessageCircle size={20} />
                         </a>
                     </div>
@@ -1211,13 +1352,6 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="bg-white/5 p-10 rounded-[40px] border border-white/10 flex flex-col gap-6 w-full md:w-auto">
-                    <h4 className="text-white font-bold uppercase text-[10px] tracking-[0.3em] opacity-30">Precisa de Ajuda?</h4>
-                    <p className="text-white/70 text-sm italic font-medium">Garanta sua mesa para o jantar agora.</p>
-                    <a href="https://wa.me/5582991092725" target="_blank" className="btn-whatsapp btn-shine px-10 py-5 rounded-2xl font-bold uppercase text-[10px] tracking-widest text-center shadow-xl">
-                        <MessageCircle size={16} /> Reservar via WhatsApp
-                    </a>
-                </div>
              </div>
 
              <div className="max-w-7xl mx-auto pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
@@ -1244,20 +1378,9 @@ export default function App() {
       <ExperienceGallery />
       <ChefSection />
       <GoogleEvaluation />
+      <FAQSection />
       <Location />
       <Footer />
-      
-      {/* Floating WhatsApp Button */}
-      <a 
-        href="https://wa.me/5582991092725" 
-        target="_blank"
-        className="fixed bottom-8 right-8 z-[100] btn-whatsapp btn-shine p-5 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all group"
-      >
-        <MessageCircle size={24} className="group-hover:rotate-12 transition-transform" />
-        <span className="absolute right-full mr-4 bg-mare-navy text-white px-4 py-2 rounded-xl text-[10px] font-bold uppercase tracking-widest whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity translate-x-2 group-hover:translate-x-0 shadow-2xl">
-            WhatsApp Maré
-        </span>
-      </a>
     </div>
   );
 }
