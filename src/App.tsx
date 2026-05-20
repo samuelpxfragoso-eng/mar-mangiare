@@ -82,7 +82,7 @@ const Navbar = () => {
                   Maré Mangiare
                 </span>
                 <span className="text-[8px] uppercase tracking-[0.4em] font-bold text-mare-orange">
-                  Gastrobar & Pizzeria
+                  Pizza, Massas & Frutos do Mar
                 </span>
              </div>
           </div>
@@ -347,7 +347,7 @@ const GoogleReviewsSection = () => {
                     <a 
                         href="https://www.google.com/search?q=Mare+Mangiare+Praia+do+Frances+Avaliações" 
                         target="_blank"
-                        className="btn-shine btn-ifood px-10 py-5 rounded-full font-bold text-[11px] uppercase tracking-widest shadow-2xl flex items-center gap-3 hover:scale-105 active:scale-95 transition-all"
+                        className="btn-shine bg-mare-navy text-white px-10 py-5 rounded-full font-bold text-[11px] uppercase tracking-widest shadow-2xl flex items-center gap-3 hover:scale-105 active:scale-95 transition-all"
                     >
                         <Star size={16} fill="currentColor" /> AVALIAR NO GOOGLE
                     </a>
@@ -577,7 +577,7 @@ const PizzaSection = () => {
             <div className="mt-20 flex flex-col sm:flex-row justify-center items-center gap-6">
                 <a href="https://api.whatsapp.com/send?phone=5582981935339&text=Ola,%20gostaria%20de%20reservar%20uma%20data%20para%20eventos." target="_blank" className="btn-whatsapp btn-shine px-8 py-4 rounded-full transition-all font-bold text-[11px] uppercase tracking-widest group w-full sm:w-auto justify-center">
                     <MessageCircle size={18} />
-                    Dúvidas e Eventos
+                    Tira dúvidas e eventos
                     <ChevronRight size={16} className="group-hover:translate-x-2 transition-transform" />
                 </a>
                 <a href="https://www.ifood.com.br/delivery/marechal-deodoro-al/restaurante-e-pizzaria-mare-mangiare-praia-do-frances-praia-do-frances/013fd2ba-02cd-43a4-8afb-36a291c64790" target="_blank" className="btn-ifood btn-shine px-8 py-4 rounded-full transition-all font-bold text-[11px] uppercase tracking-widest group w-full sm:w-auto justify-center">
@@ -733,7 +733,7 @@ const CucinaSection = () => {
                   className="btn-whatsapp btn-shine px-8 py-4 rounded-xl transition-all font-bold text-[11px] uppercase tracking-widest group w-full sm:w-auto justify-center"
                 >
                     <MessageCircle size={18} />
-                    Dúvidas e Eventos
+                    Tira dúvidas e eventos
                     <ChevronRight size={16} className="group-hover:translate-x-2 transition-transform" />
                 </a>
                 <a 
@@ -752,116 +752,133 @@ const CucinaSection = () => {
 };
 
 const DrinksSection = () => {
-  const [activeTab, setActiveTab] = useState('bebidas');
+    const [activeTab, setActiveTab] = useState('especiais');
 
-  const categories = [
-    { id: 'bebidas', label: 'Bebidas' },
-    { id: 'bar', label: 'Bar' },
-  ];
+    const drinkImages = [
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297288/WhatsApp_Image_2026-05-20_at_2.00.47_PM_1_k7bfcb.jpg",
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297288/WhatsApp_Image_2026-05-20_at_2.00.47_PM_xgbol2.jpg",
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297288/WhatsApp_Image_2026-05-20_at_2.00.48_PM_ncvba8.jpg",
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297288/WhatsApp_Image_2026-05-20_at_2.00.48_PM_3_c5ecqo.jpg",
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297288/WhatsApp_Image_2026-05-20_at_2.00.47_PM_2_uxni2l.jpg",
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297287/WhatsApp_Image_2026-05-20_at_2.00.49_PM_2_nvjbou.jpg",
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297287/WhatsApp_Image_2026-05-20_at_2.00.49_PM_ohljab.jpg",
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297287/WhatsApp_Image_2026-05-20_at_2.00.48_PM_1_twwcsq.jpg",
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297287/WhatsApp_Image_2026-05-20_at_2.00.49_PM_1_r90h2o.jpg",
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297287/WhatsApp_Image_2026-05-20_at_2.00.49_PM_4_ez6qqd.jpg",
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297287/WhatsApp_Image_2026-05-20_at_2.00.50_PM_xnori8.jpg",
+        "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779297287/WhatsApp_Image_2026-05-20_at_2.00.48_PM_2_ei5svo.jpg"
+    ];
 
-  const menu = {
-    bebidas: [
-      { name: "Água Mineral (500ml)", price: "R$ 7", desc: "Com ou sem gás." },
-      { name: "H2O", price: "R$ 11", desc: "Refrigerante leve." },
-      { name: "Suco de Polpa (Copo)", price: "R$ 12", desc: "Diversos sabores. (Jarra: R$ 26)" },
-      { name: "Suco de Laranja (Copo)", price: "R$ 14", desc: "Natural. (Jarra: R$ 29)" },
-      { name: "Limonada Suíça (Copo)", price: "R$ 14", desc: "Refrescante. (Jarra: R$ 29)" },
-      { name: "Refrigerantes", price: "R$ 8-9", desc: "KS ou Lata 350ml." },
-      { name: "Guaraná Jesus (Lata)", price: "R$ 9", desc: "Clássico maranhense." },
-      { name: "Café", price: "R$ 9", desc: "Expresso artesanal." }
-    ],
-    bar: [
-      { name: "Budweiser (355ml)", price: "R$ 14", desc: "Cerveja lager." },
-      { name: "Heineken (355ml)", price: "R$ 15", desc: "Cerveja premium." },
-      { name: "Stella Artois (330ml)", price: "R$ 15", desc: "Sem glúten." },
-      { name: "Corona (355ml)", price: "R$ 15", desc: "Fatias de limão siciliano." },
-      { name: "Chopp Hop Bros (300ml)", price: "R$ 15", desc: "Chopp Pilsen artesanal local." },
-      { name: "Cachaça Pitú / Sagatiba", price: "R$ 5-6", desc: "Tradicionais brasileiras." },
-      { name: "Vodka Skyy / Gin", price: "R$ 6-7", desc: "Doses selecionadas." },
-      { name: "Whisky", price: "R$ 28", desc: "Dose selecionada." }
-    ]
-  };
+    const categories = [
+        { id: 'especiais', label: 'Autorais & Especiais' },
+        { id: 'classicos', label: 'Clássicos & Tradicionais' },
+        { id: 'nao_alcoolicos', label: 'Não Alcoólicos' }
+    ];
 
-  return (
-    <section id="bebidas" className="py-24 px-6 bg-mare-navy/5 relative">
-       <div className="max-w-6xl mx-auto relative z-10 text-center">
-            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-mare-orange mb-6 inline-block italic">Mixology & Bar</span>
-            <h2 className="text-5xl md:text-7xl text-mare-navy mb-16 serif italic text-mare-gold">Bebidas e Bar</h2>
+    const menu = {
+        especiais: [
+            { name: "Dama da Noite", price: "R$ 36", desc: "Purê de morango, limão siciliano, gin rosé e espuma de gengibre." },
+            { name: "Flor de Pitaya", price: "R$ 36", desc: "Pitaya, morango, limão e gin rosé." },
+            { name: "Gold Drink", price: "R$ 36", desc: "Infusão de frutas amarelas, xarope de pêssego, vinho branco e rum." },
+            { name: "Maré Vermelha", price: "R$ 36", desc: "Framboesa, mirtilo, amora, morango, gin rosé e refrigerante citrus." },
+            { name: "Raio de Sol", price: "R$ 36", desc: "Limão siciliano, xarope de morango, citrus e gin." },
+            { name: "Oceano", price: "R$ 36", desc: "Limão siciliano, chá de flores azuis, cachaça blue, refrigerante de limão e espuma de gengibre." }
+        ],
+        classicos: [
+            { name: "Caipirinha ou Caipirosca", price: "R$ 22", desc: "Cachaça ou vodka, limão e açúcar." },
+            { name: "Caipifruta", price: "R$ 28", desc: "Fruta da estação, gelo e açúcar com cachaça ou vodka." },
+            { name: "Kyr Royale", price: "R$ 22", desc: "Espumante com licor de cassis e cereja." },
+            { name: "Aperol Spritz", price: "R$ 36", desc: "Aperol, suco de laranja e espumante." },
+            { name: "Moscow Mule", price: "R$ 36", desc: "Xarope de limão, rum e espuma de gengibre." }
+        ],
+        nao_alcoolicos: [
+            { name: "Soda Italiana", price: "R$ 18", desc: "Xarope de frutas (maçã verde, frutas vermelhas, morango, limão siciliano ou mirtilo) e água gaseificada." },
+            { name: "Coco Nevado", price: "R$ 24", desc: "Suco de limão, leite de coco e leite condensado. Deliciosamente refrescante." }
+        ]
+    };
 
-            <div className="flex justify-center gap-2 mb-16 px-4">
-                {categories.map((cat) => (
-                    <button 
-                        key={cat.id}
-                        onClick={() => setActiveTab(cat.id)}
-                        className={`px-8 py-3 rounded-full font-bold text-[10px] uppercase tracking-widest transition-all ${activeTab === cat.id ? 'bg-mare-navy text-white shadow-xl scale-105' : 'bg-white text-mare-navy/50 hover:bg-white/80'}`}
-                    >
-                        {cat.label}
-                    </button>
-                ))}
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 text-left">
-                <AnimatePresence mode="wait">
-                    <motion.div 
-                        key={activeTab}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 0.3 }}
-                        className="col-span-full grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10"
-                    >
-                        {menu[activeTab as keyof typeof menu] ? menu[activeTab as keyof typeof menu].map((item, idx) => (
-                            <div key={item.name} className="group">
-                                <div className="flex justify-between items-baseline mb-2 gap-4">
-                                    <h4 className="text-lg md:text-xl font-display text-mare-gold group-hover:text-mare-orange transition-colors duration-300 italic">{item.name}</h4>
-                                    <div className="flex-1 border-b border-mare-navy/10 translate-y-[-4px]" />
-                                    <span className="font-bold text-mare-orange whitespace-nowrap">{item.price}</span>
-                                </div>
-                                <p className="text-xs text-mare-navy/40 font-medium leading-relaxed italic">{item.desc}</p>
-                            </div>
-                        )) : null}
-                    </motion.div>
-                </AnimatePresence>
-            </div>
+    return (
+        <section id="bebidas" className="py-24 px-6 bg-mare-cream relative overflow-hidden">
+            {/* Background Decoration */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-mare-gold/5 rounded-full blur-[120px] -z-0" />
             
-            <div className="mt-20 p-8 border border-mare-navy/5 rounded-[32px] bg-white/30 backdrop-blur-sm max-w-2xl mx-auto">
-                <p className="text-[10px] font-bold uppercase tracking-widest text-mare-orange mb-4 italic">Observações</p>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-left mb-8">
-                    <div>
-                        <p className="text-[8px] font-bold uppercase tracking-widest text-mare-navy/40 mb-1">Embalagens</p>
-                        <p className="text-[10px] font-medium text-mare-navy italic">Bebida: R$ 2 | Pizza: R$ 3</p>
-                    </div>
-                    <div>
-                        <p className="text-[8px] font-bold uppercase tracking-widest text-mare-navy/40 mb-1">Serviços</p>
-                        <p className="text-[10px] font-medium text-mare-navy italic">Taxa de Rolha: R$ 29</p>
-                    </div>
-                    <div>
-                        <p className="text-[8px] font-bold uppercase tracking-widest text-mare-navy/40 mb-1">Couvert</p>
-                        <p className="text-[10px] font-medium text-mare-navy italic">Música ao Vivo: R$ 5,90</p>
-                    </div>
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="text-center mb-16">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-mare-orange mb-6 inline-block italic">Mixology Art</span>
+                    <h2 className="text-5xl md:text-7xl text-mare-navy serif italic leading-tight">Nossos <span className="text-mare-teal">Drinks</span></h2>
+                    <p className="mt-6 text-mare-navy/50 text-sm max-w-xl mx-auto italic font-medium">Categorias estruturadas por tipos e sabores, elaborados para harmonizar com a brisa do Maré.</p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-4 border-t border-mare-navy/5 pt-8">
-                   <a 
-                      href="https://api.whatsapp.com/send?phone=5582981935339&text=Ola,%20gostaria%20de%20reservar%20uma%20data%20para%20eventos." 
-                      target="_blank" 
-                      className="btn-whatsapp btn-shine px-6 py-3 rounded-full transition-all font-bold text-[10px] uppercase tracking-widest"
-                    >
-                        <MessageCircle size={14} /> Dúvidas e Eventos
-                    </a>
-                    <div className="hidden sm:block w-1 h-1 bg-mare-navy/10 rounded-full" />
+                {/* Drinks Gallery */}
+                <div className="flex gap-4 overflow-x-auto no-scrollbar pb-16 -mx-6 px-6 mb-12 cursor-grab active:cursor-grabbing">
+                    {drinkImages.map((img, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.05 }}
+                            className="min-w-[240px] md:min-w-[320px] aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative group border-4 border-white"
+                        >
+                            <img 
+                                src={img} 
+                                alt={`Drink Maré ${i}`} 
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                referrerPolicy="no-referrer"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-mare-navy/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </motion.div>
+                    ))}
+                </div>
+
+                <div className="max-w-4xl mx-auto">
+                    <div className="flex justify-center gap-2 mb-16 overflow-x-auto no-scrollbar pb-4 px-4">
+                        {categories.map((cat) => (
+                            <button 
+                                key={cat.id}
+                                onClick={() => setActiveTab(cat.id)}
+                                className={`px-6 py-3 rounded-full font-bold text-[9px] md:text-[10px] uppercase tracking-widest transition-all whitespace-nowrap ${activeTab === cat.id ? 'bg-mare-navy text-white shadow-xl scale-105' : 'bg-white text-mare-navy/40 hover:bg-mare-navy/5 border border-mare-navy/5'}`}
+                            >
+                                {cat.label}
+                            </button>
+                        ))}
+                    </div>
+
+                    <AnimatePresence mode="wait">
+                        <motion.div 
+                            key={activeTab}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                            className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10"
+                        >
+                            {menu[activeTab as keyof typeof menu] ? menu[activeTab as keyof typeof menu].map((item, idx) => (
+                                <div key={item.name} className="group p-6 rounded-3xl hover:bg-white hover:shadow-xl transition-all duration-300">
+                                    <div className="flex justify-between items-baseline mb-2 gap-4">
+                                        <h4 className="text-lg md:text-xl font-display text-mare-gold group-hover:text-mare-orange transition-colors duration-300 italic">{item.name}</h4>
+                                        <div className="flex-1 border-b border-dotted border-mare-navy/10 translate-y-[-4px]" />
+                                        <span className="font-bold text-mare-orange whitespace-nowrap">{item.price}</span>
+                                    </div>
+                                    <p className="text-xs text-mare-navy/50 font-medium leading-relaxed italic">{item.desc}</p>
+                                </div>
+                            )) : null}
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                <div className="mt-20 flex justify-center">
                     <a 
-                      href="https://www.ifood.com.br/delivery/marechal-deodoro-al/restaurante-e-pizzaria-mare-mangiare-praia-do-frances-praia-do-frances/013fd2ba-02cd-43a4-8afb-36a291c64790" 
-                      target="_blank" 
-                      className="btn-ifood btn-shine px-6 py-3 rounded-full transition-all font-bold text-[10px] uppercase tracking-widest"
+                        href="https://api.whatsapp.com/send?phone=5582981935339&text=Ola,%20gostaria%20de%20reservar%20uma%20data%20para%20eventos." 
+                        target="_blank" 
+                        className="btn-whatsapp btn-shine px-10 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest shadow-2xl flex items-center gap-3"
                     >
-                        <ShoppingBag size={14} /> Pedir iFood
+                        <MessageCircle size={18} /> Pedir via WhatsApp
                     </a>
                 </div>
             </div>
-       </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 const ExperienceGallery = () => {
@@ -1320,7 +1337,7 @@ const Footer = () => {
                         </div>
                         <div className="flex flex-col">
                             <h2 className="text-white font-display text-2xl italic tracking-widest">Maré Mangiare</h2>
-                            <p className="text-mare-orange text-[9px] uppercase font-bold tracking-[0.4em]">Gastrobar & Pizzeria</p>
+                            <p className="text-mare-orange text-[9px] uppercase font-bold tracking-[0.4em]">Pizza, Massas & Frutos do Mar</p>
                         </div>
                     </div>
                     <p className="text-white/40 text-sm leading-relaxed mb-10 font-medium italic">
