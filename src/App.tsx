@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { 
   Instagram, 
   MapPin, 
@@ -8,6 +8,7 @@ import {
   Menu as MenuIcon, 
   X, 
   ShoppingBag, 
+  Heart,
   ChevronRight,
   MessageCircle,
   HelpCircle,
@@ -192,14 +193,15 @@ const Hero = () => {
             </span>
           </motion.div>
           
-          <h1 className="text-4xl md:text-[5.5rem] lg:text-[6.5rem] text-mare-gold mb-10 font-bold leading-[0.8] tracking-tighter mix-blend-multiply">
-            Maresia, <br />
-            <span className="text-mare-orange italic serif decoration-mare-orange/10 underline underline-offset-8">Vinho</span> e <br />
-            Alta <span className="text-mare-teal">Pizza</span>.
+          <h1 className="text-3xl md:text-[4rem] lg:text-[4.5rem] text-mare-gold mb-10 font-bold leading-[1.1] tracking-tighter mix-blend-multiply uppercase">
+            Premiado como o melhor <br />
+            restaurante de <span className="text-mare-orange italic serif">Pizzas</span> e <br />
+            <span className="text-mare-teal">Massas</span> Artezanais <br />
+            da Praia do Francês.
           </h1>
           
           <p className="text-lg md:text-xl text-mare-navy/60 mb-14 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed italic">
-            Onde a alta gastronomia italiana encontra o lifestyle praiano. Tradição, brisa e sabores inesquecíveis.
+            A melhor experiência gastronômica da praia do francês.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start items-center">
@@ -255,7 +257,7 @@ const Hero = () => {
                 className="absolute -right-8 top-0 z-40 bg-white/95 backdrop-blur-2xl px-6 py-5 rounded-[28px] shadow-2xl border border-white max-w-[160px] hidden xl:block"
             >
                 <Star className="text-mare-orange mb-3" size={24} fill="currentColor" />
-                <h4 className="text-mare-navy font-bold text-[11px] leading-tight italic uppercase tracking-wider">A melhor Pizzaria de Marechal</h4>
+                <h4 className="text-mare-navy font-bold text-[11px] leading-tight italic uppercase tracking-wider">A melhor experiência da Praia do Francês</h4>
             </motion.div>
         </div>
       </div>
@@ -342,7 +344,7 @@ const GoogleReviewsSection = () => {
                             </div>
                             <span className="text-mare-navy/40 font-bold text-[10px] uppercase tracking-widest">Google Reviews</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl text-mare-navy serif italic leading-tight">O Que <span className="text-mare-gold">Amam</span> <br />no Maré Mangiare</h2>
+                        <h2 className="text-4xl md:text-6xl text-mare-navy serif italic leading-tight">O que nossos <span className="text-mare-gold">clientes</span> <br />dizem sobre nós</h2>
                     </div>
                     <a 
                         href="https://www.google.com/search?q=Mare+Mangiare+Praia+do+Frances+Avaliações" 
@@ -401,8 +403,8 @@ const GoogleReviewsSection = () => {
 
 const CategoriesGrid = () => {
   const experiences = [
-    { title: "Pizzaria Artesanal", desc: "Longa fermentação e ingredientes importados.", icon: <Pizza />, color: "bg-mare-orange/5" },
-    { title: "Gastrobar", desc: "Drinks autorais e uma carta de vinhos selecionada.", icon: <Wine />, color: "bg-mare-gold/5" },
+    { title: "Pizza de fermentação lenta estilo napolitana", desc: "Longa fermentação e ingredientes importados.", icon: <Pizza />, color: "bg-mare-orange/5" },
+    { title: "Carta de drinks", desc: "Drinks autorais e uma carta de vinhos selecionada.", icon: <Wine />, color: "bg-mare-gold/5" },
     { title: "Cozinha Praiana", desc: "O frescor do mar direto para sua mesa.", icon: <UtensilsCrossed />, color: "bg-mare-teal/5" }
   ];
 
@@ -881,16 +883,86 @@ const DrinksSection = () => {
     );
 };
 
+const ValentinesSection = () => {
+    return (
+        <section className="py-24 px-6 bg-red-50 relative overflow-hidden">
+            {/* Background Decorations */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+                <div className="absolute top-10 left-10 w-32 h-32 text-red-200 rotate-12">
+                   <Heart size={128} fill="currentColor" />
+                </div>
+                <div className="absolute bottom-10 right-10 w-48 h-48 text-red-200 -rotate-12">
+                   <Heart size={192} fill="currentColor" />
+                </div>
+            </div>
+
+            <div className="max-w-7xl mx-auto relative z-10 text-center">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="inline-block p-4 rounded-full bg-red-100 text-red-600 mb-8"
+                >
+                    <Heart size={32} fill="currentColor" />
+                </motion.div>
+                
+                <span className="block text-[10px] font-bold uppercase tracking-[0.4em] text-red-600 mb-6 italic">San Valentino al Maré</span>
+                <h2 className="text-5xl md:text-7xl text-mare-navy mb-8 serif italic">Dia dos <span className="text-red-600">Namorados</span></h2>
+                
+                <p className="max-w-2xl mx-auto text-lg text-mare-navy/60 mb-12 font-medium italic leading-relaxed">
+                    Vivencie uma noite inesquecível com um menu exclusivo, luz de velas e a brisa perfeita da Praia do Francês. Garanta sua mesa para celebrar o amor.
+                </p>
+
+                <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a 
+                        href="https://api.whatsapp.com/send?phone=5582981935339&text=Ola,%20gostaria%20de%20reservar%20uma%20mesa%20para%20o%20Dia%20dos%20Namorados." 
+                        target="_blank" 
+                        className="bg-red-600 hover:bg-red-700 text-white px-12 py-6 rounded-full font-bold uppercase text-[12px] tracking-[0.2em] shadow-2xl transition-all hover:-translate-y-2 active:scale-95 flex items-center gap-3 group"
+                    >
+                        <MessageCircle size={20} />
+                        Reservar agora
+                    </a>
+                </div>
+                
+                <div className="mt-16 flex justify-center items-center gap-4 text-red-400/50">
+                    <Heart size={12} fill="currentColor" />
+                    <span className="text-[10px] uppercase font-bold tracking-widest">Vagas Limitadas</span>
+                    <Heart size={12} fill="currentColor" />
+                </div>
+            </div>
+        </section>
+    );
+};
+
 const ExperienceGallery = () => {
-    const [isMuted, setIsMuted] = useState(true);
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [mutedVideos, setMutedVideos] = useState<Record<number, boolean>>({ 0: true, 1: true, 2: true, 3: true });
+    const scrollRef = useRef<HTMLDivElement>(null);
 
     const reels = [
-        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779164785/SnapInsta.to_AQN06hXFuOBprqCAwyrfsEbXAB15gYgp129KYe4vOYA9gU7QrPXOABHifIS6Pkg0g5Q2lt8Z5MLtIYw5P_BH-3qwcVTRBLklm99QCag_zahriq.mp4",
-        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779164806/SnapInsta.to_AQNMypdMcj6lURpQjmhjl9YNV9Cy0L5Rk8fjZF_FxJoi_g4b1A_eptDDj94M63lUetgauCfJ-elooPTh5BBYDz-KXzHvCd0fqkKPD9U_pa7lzb.mp4",
-        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779164872/SnapInsta.to_AQPuOjFmaeYmm4QWnzDEMq14sV4dWGJEs6hdb6hpNt0mWqorSg391scs6tfHipCApzaj3JSVlChyXNvk1O1HSiAnymjen04BASKyQfY_bzpchz.mp4",
-        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779165030/SnapInsta.to_AQMODxlbNT2QqYe3KA5xyWleG0Xc3Szeoaoxy_xkM0DFEc-HsLLHHsr_-Ccv2ocqeShlUHocNPV1ed4l9ckBEHU6pvLdQo2lb058-cA_b6fdxp.mp4"
+        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779495973/SnapInsta.to_AQNPPdmX-stWb0JalpsZ0BRIm0KiX610nNoMM__fesY28pwhnlkwHjsYYFNn2r0fEA5jWXOnfmEPkeajcA7FZfC0_s0hfgz.mp4",
+        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779495974/SnapInsta.to_AQMXehx1ymWTQsSLdWpmRu89Oky3FIX_ojYszrHXfIbRmyyJC94DBpTImh--gBs8Jj_vKMdX4Xtn4YSYJc4y9OOI_lskrmp.mp4",
+        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779495977/SnapInsta.to_AQNPoQbTLOKtv_G9QB-Ztod0TPtBYvVLAwJNenNSYcbhddFVStiOWeAchK0W8WvP_vQ38dhXDUmCiFinuCkMHOkWs76J8jaYmguIZwI_lqigll.mp4",
+        "https://res.cloudinary.com/dqfnkztbe/video/upload/q_auto/f_auto/v1779495979/SnapInsta.to_AQOCgEt7mAoAXbafL8LC4mLiaB-NpXs7_eVO3-47mvYjaWTuy6pInkxHoreE6hKpfuLbInki7E_Koh4p5YzyV1gP_npar16.mp4"
     ];
+
+    const toggleMute = (index: number) => {
+        setMutedVideos(prev => ({ ...prev, [index]: !prev[index] }));
+    };
+
+    useEffect(() => {
+        const scrollContainer = scrollRef.current;
+        if (!scrollContainer) return;
+
+        let scrollInterval = setInterval(() => {
+            if (scrollContainer.scrollLeft + scrollContainer.clientWidth >= scrollContainer.scrollWidth - 10) {
+                scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                scrollContainer.scrollBy({ left: 344, behavior: 'smooth' });
+            }
+        }, 5000);
+
+        return () => clearInterval(scrollInterval);
+    }, []);
 
     return (
         <section id="experiencia" className="py-24 bg-mare-navy overflow-hidden relative">
@@ -906,19 +978,16 @@ const ExperienceGallery = () => {
                     </div>
                     
                     <div className="flex items-center gap-4">
-                        <button 
-                            onClick={() => setIsMuted(!isMuted)}
-                            className="bg-white/10 hover:bg-white/20 p-4 rounded-full transition-all text-white border border-white/5"
-                        >
-                            {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
-                        </button>
                         <a href="https://www.instagram.com/mare.mangiare?igsh=MXZxczdjcXd2MGpzZQ==" target="_blank" className="btn-shine flex items-center gap-3 bg-white text-mare-navy px-8 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-mare-orange hover:text-white transition-all shadow-2xl">
                             Instagram <Instagram size={18} />
                         </a>
                     </div>
                 </div>
 
-                <div className="flex gap-6 overflow-x-auto no-scrollbar pb-12 cursor-grab active:cursor-grabbing snap-x">
+                <div 
+                    ref={scrollRef}
+                    className="flex gap-6 overflow-x-auto no-scrollbar pb-12 cursor-grab active:cursor-grabbing snap-x"
+                >
                     {reels.map((vid, i) => (
                         <motion.div 
                             key={i}
@@ -932,10 +1001,22 @@ const ExperienceGallery = () => {
                                 src={vid} 
                                 className="w-full h-full object-cover" 
                                 autoPlay 
-                                muted={isMuted} 
+                                muted={mutedVideos[i] ?? true} 
                                 loop 
                                 playsInline 
                             />
+                            
+                            {/* Individual Mute Toggle */}
+                            <button 
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    toggleMute(i);
+                                }}
+                                className="absolute top-6 right-6 z-20 bg-black/40 backdrop-blur-md p-3 rounded-full text-white hover:bg-black/60 transition-all border border-white/10"
+                            >
+                                {mutedVideos[i] ? <VolumeX size={16} /> : <Volume2 size={16} />}
+                            </button>
+
                             <div className="absolute inset-0 bg-gradient-to-t from-mare-navy/80 via-transparent to-transparent opacity-60 pointer-events-none" />
                             <div className="absolute bottom-8 left-8 flex items-center gap-3">
                                 <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-md">
@@ -948,9 +1029,9 @@ const ExperienceGallery = () => {
                 </div>
                 
                 {/* Scroll Indicator */}
-                <div className="flex justify-center gap-2 mt-4 md:hidden">
+                <div className="flex justify-center gap-2 mt-4">
                     {reels.map((_, i) => (
-                        <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                        <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/20 transition-all group-hover:bg-mare-orange" />
                     ))}
                 </div>
             </div>
@@ -1161,11 +1242,11 @@ const FAQSection = () => {
     const faqs = [
         {
             q: "Qual o horário de funcionamento?",
-            a: "Estamos abertos de Terça a Domingo, das 17h às 23h. Venha aproveitar o pôr do sol na Praia do Francês conosco."
+            a: "Estamos abertos de Domingo a Quinta das 16h às 22:30, e Sexta e Sábado das 16h às 23:30. Venha aproveitar o pôr do sol na Praia do Francês conosco."
         },
         {
             q: "Onde o restaurante está localizado?",
-            a: "Estamos situados na charmosa galeria La Rue, o coração gastronômico da Praia do Francês em Marechal Deodoro - AL."
+            a: "Estamos situados na Rua Carapeba - La Rue, em frente à loja Oceanic, o coração gastronômico da Praia do Francês em Marechal Deodoro - AL."
         },
         {
             q: "Vocês aceitam reservas?",
@@ -1272,7 +1353,7 @@ const Location = () => {
                                     </div>
                                     <div>
                                         <p className="text-[10px] uppercase tracking-widest font-bold opacity-50 mb-1">Endereço</p>
-                                        <p className="text-sm font-medium italic">R. Carapeba, 121 - Galeria La Rue, Praia do Francês, Marechal Deodoro - AL.</p>
+                                        <p className="text-sm font-medium italic">R. Carapeba, 121 - La Rue (em frente à loja Oceanic), Praia do Francês, Marechal Deodoro - AL.</p>
                                     </div>
                                 </div>
                                 
@@ -1281,8 +1362,11 @@ const Location = () => {
                                         <Clock size={20} className="text-mare-orange" />
                                     </div>
                                     <div>
-                                        <p className="text-[10px] uppercase tracking-widest font-bold opacity-50 mb-1">Horário de Jantar</p>
-                                        <p className="text-sm font-medium italic">Aberto diariamente: 18:00 às 23:00</p>
+                                        <p className="text-[10px] uppercase tracking-widest font-bold opacity-50 mb-1">Horário de Atendimento</p>
+                                        <div className="text-sm font-medium italic leading-relaxed">
+                                            <p>Dom a Qui: 16:00 às 22:30</p>
+                                            <p>Sex e Sáb: 16:00 às 23:30</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1341,7 +1425,7 @@ const Footer = () => {
                         </div>
                     </div>
                     <p className="text-white/40 text-sm leading-relaxed mb-10 font-medium italic">
-                        Cozinha afetiva, alma mediterrânea e o frescor da Praia do Francês em cada detalhe. 
+                        Comida afetiva, alma italiana e um toque autoral em cada detalhe. 
                     </p>
                     <div className="flex gap-4">
                         <a href="https://www.instagram.com/mare.mangiare?igsh=MXZxczdjcXd2MGpzZQ==" target="_blank" className="w-12 h-12 bg-white/5 hover:bg-mare-orange rounded-full flex items-center justify-center text-white transition-all border border-white/10">
@@ -1392,6 +1476,7 @@ export default function App() {
       <PizzaSection />
       <CucinaSection />
       <DrinksSection />
+      <ValentinesSection />
       <ExperienceGallery />
       <ChefSection />
       <GoogleEvaluation />
