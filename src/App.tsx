@@ -1039,6 +1039,118 @@ const ExperienceGallery = () => {
     );
 };
 
+const GiftCardSection = () => {
+    const values = [100, 150, 200, 250, 300];
+    
+    return (
+        <section id="presente" className="py-24 px-6 bg-white relative overflow-hidden">
+            {/* Background elements */}
+            <div className="absolute top-0 left-0 w-96 h-96 bg-mare-gold/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-mare-orange/5 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
+
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    {/* Image Column */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="relative group"
+                    >
+                        <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl border-8 border-white relative z-10 transition-transform duration-700 group-hover:scale-[1.02]">
+                            <img 
+                                src="https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779557824/WhatsApp_Image_2026-05-23_at_2.35.01_PM_ocadzo.jpg" 
+                                alt="Cartão Presente Maré Mangiare" 
+                                className="w-full h-full object-cover"
+                                referrerPolicy="no-referrer"
+                            />
+                            {/* Animated Shine Effect */}
+                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                        </div>
+                        {/* Decorative background for image */}
+                        <div className="absolute -inset-4 bg-mare-gold/10 rounded-[50px] blur-2xl -z-0 group-hover:bg-mare-gold/20 transition-colors" />
+                    </motion.div>
+
+                    {/* Content Column */}
+                    <div className="space-y-8">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <span className="text-mare-orange font-bold text-[10px] uppercase tracking-[0.4em] mb-4 inline-block italic">Presenteie com Emoção</span>
+                            <h2 className="text-4xl md:text-6xl text-mare-navy serif italic leading-tight mb-6">
+                                Cartão Presente <br />
+                                <span className="text-mare-gold">Maré Mangiare</span>
+                            </h2>
+                            <p className="text-mare-navy/70 text-lg leading-relaxed italic mb-8">
+                                Agora você pode transformar momentos especiais em uma experiência inesquecível no Maré Mangiare. ✨
+                            </p>
+                            <p className="text-mare-navy/60 text-sm leading-relaxed mb-6">
+                                Nosso Cartão Presente foi criado para quem deseja presentear com liberdade: a pessoa escolhe como quer aproveitar o valor no restaurante — seja em pizzas napolitanas, massas artesanais, drinks autorais ou sobremesas.
+                            </p>
+                        </motion.div>
+
+                        {/* Values Grid */}
+                        <div className="space-y-6">
+                            <h4 className="text-[10px] font-bold uppercase tracking-widest text-mare-navy/40">Valores disponíveis</h4>
+                            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+                                {values.map((val) => (
+                                    <a 
+                                        key={val}
+                                        href={`https://api.whatsapp.com/send?phone=5582981935339&text=Olá,%20gostaria%20de%20comprar%20um%20Cartão%20Presente%20no%20valor%20de%20R$${val}.`}
+                                        target="_blank"
+                                        className="btn-shine bg-mare-cream hover:bg-mare-gold hover:text-white transition-all p-4 rounded-2xl flex flex-col items-center justify-center border border-mare-navy/5 shadow-sm group"
+                                    >
+                                        <span className="text-[10px] uppercase font-bold opacity-40 group-hover:opacity-100 mb-1 tracking-tighter">Valor</span>
+                                        <span className="text-xl font-display italic">R${val}</span>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Info list */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-mare-navy/5">
+                            <div>
+                                <h4 className="text-[10px] font-bold uppercase tracking-widest text-mare-navy/40 mb-3 flex items-center gap-2">
+                                    <ShoppingBag size={12} /> Como funciona?
+                                </h4>
+                                <p className="text-xs text-mare-navy/60 leading-relaxed italic">
+                                    Clique no valor desejado para entrar em contato via WhatsApp. Pagamento via Pix, Débito ou Crédito. Geramos um cartão personalizado para o presenteado.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 className="text-[10px] font-bold uppercase tracking-widest text-mare-navy/40 mb-3 flex items-center gap-2">
+                                    <Timer size={12} /> Validade
+                                </h4>
+                                <p className="text-xs text-mare-navy/60 leading-relaxed italic">
+                                    O cartão poderá ser utilizado em até 60 dias após a data da compra em todas as opções do nosso cardápio.
+                                </p>
+                            </div>
+                        </div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                            className="pt-6"
+                        >
+                             <a 
+                                href="https://api.whatsapp.com/send?phone=5582981935339&text=Olá,%20gostaria%20de%20comprar%20um%20Cartão%20Presente." 
+                                target="_blank" 
+                                className="btn-whatsapp btn-shine px-10 py-5 rounded-full font-bold uppercase text-[11px] tracking-widest shadow-2xl flex items-center gap-3 w-full sm:w-auto justify-center"
+                            >
+                                <MessageCircle size={18} /> Comprar Agora
+                            </a>
+                        </motion.div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
 const ChefSection = () => {
   return (
     <section id="chef" className="py-24 px-6 bg-mare-cream relative overflow-hidden">
@@ -1478,6 +1590,7 @@ export default function App() {
       <DrinksSection />
       <ValentinesSection />
       <ExperienceGallery />
+      <GiftCardSection />
       <ChefSection />
       <GoogleEvaluation />
       <FAQSection />
