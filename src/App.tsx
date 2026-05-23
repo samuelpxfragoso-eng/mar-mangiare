@@ -596,20 +596,20 @@ const CucinaSection = () => {
   const [activeTab, setActiveTab] = useState('entradas');
 
   const cucinaImages = [
-    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779559861/WhatsApp_Image_2026-05-23_at_3.08.40_PM_1_hzyry6.jpg",
     "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779559861/WhatsApp_Image_2026-05-23_at_3.08.40_PM_l04dzj.jpg",
-    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779158988/WhatsApp_Image_2026-05-18_at_11.45.16_PM_1_jhq6vp.jpg",
-    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779158988/WhatsApp_Image_2026-05-18_at_11.45.16_PM_j30b0u.jpg",
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779559861/WhatsApp_Image_2026-05-23_at_3.08.40_PM_1_hzyry6.jpg",
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159010/WhatsApp_Image_2026-05-18_at_11.45.17_PM_lownsa.jpg",
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159010/WhatsApp_Image_2026-05-18_at_11.45.17_PM_2_xukhjg.jpg",
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159010/WhatsApp_Image_2026-05-18_at_11.45.17_PM_3_q0fd59.jpg",
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159010/WhatsApp_Image_2026-05-18_at_11.45.17_PM_1_koluk8.jpg",
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159009/WhatsApp_Image_2026-05-18_at_11.45.18_PM_2_lzxpq5.jpg",
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159009/WhatsApp_Image_2026-05-18_at_11.45.18_PM_3_rsg53x.jpg",
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159009/WhatsApp_Image_2026-05-18_at_11.45.19_PM_qtxfqy.jpg",
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159009/WhatsApp_Image_2026-05-18_at_11.45.18_PM_qbhvgr.jpg",
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159009/WhatsApp_Image_2026-05-18_at_11.45.18_PM_1_farw8s.jpg",
     "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159008/WhatsApp_Image_2026-05-18_at_11.45.19_PM_1_gc9asz.jpg",
     "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159008/WhatsApp_Image_2026-05-18_at_11.45.19_PM_2_bo5vxw.jpg",
-    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159009/WhatsApp_Image_2026-05-18_at_11.45.18_PM_1_farw8s.jpg",
-    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159009/WhatsApp_Image_2026-05-18_at_11.45.18_PM_3_rsg53x.jpg",
-    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159009/WhatsApp_Image_2026-05-18_at_11.45.18_PM_2_lzxpq5.jpg",
-    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159009/WhatsApp_Image_2026-05-18_at_11.45.17_PM_4_gyguq2.jpg",
-    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159010/WhatsApp_Image_2026-05-18_at_11.45.17_PM_2_xukhjg.jpg",
-    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159010/WhatsApp_Image_2026-05-18_at_11.45.17_PM_1_koluk8.jpg",
-    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159010/WhatsApp_Image_2026-05-18_at_11.45.17_PM_3_q0fd59.jpg",
-    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159010/WhatsApp_Image_2026-05-18_at_11.45.17_PM_lownsa.jpg"
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779158988/WhatsApp_Image_2026-05-18_at_11.45.16_PM_1_jhq6vp.jpg"
   ];
 
   const categories = [
@@ -632,7 +632,7 @@ const CucinaSection = () => {
       { name: "Bruschettas de Camarão", price: "R$ 59", desc: "Creme de ricota, tomate confitado, manjericão e raspas de limão siciliano." }
     ],
     petiscos: [
-      { name: "Camarão La Rue", price: "R$ 109", desc: "Filé de camarão empanado na panko, batata frita e molho rosé ou geleia de pimenta." },
+      { name: "Camarão La Rue", price: "R$ 109", desc: "Filé de camarão empanado na panko, batata frita e molho rosé or geleia de pimenta." },
       { name: "Lula Dorê", price: "R$ 59", desc: "Anéis de lula empanados acompanhados de aioli de wasabi." },
       { name: "Pastéis de Camarão (6 un)", price: "R$ 59", desc: "Servidos com pesto da casa, rosé ou geleia de pimenta." }
     ],
@@ -643,7 +643,7 @@ const CucinaSection = () => {
       { name: "Poseidon", price: "R$ 84", desc: "Arroz negro de polvo finalizado com aioli, aioli de alho negro e limão siciliano." },
       { name: "Massa ao Alfredo", price: "R$ 79-89", desc: "Fettuccine com 3 queijos, amêndoas e brotos. Com Filé ou Camarão." },
       { name: "Risoto Cabra da Peste", price: "R$ 84", desc: "Abóbora, carne de sol, queijo coalho frito, manteiga de garrafa e coentro." },
-      { name: "Filé & Aligot", price: "R$ 79", desc: "Filé mignon com aligot (purê de queijo) e molho demi-glace." },
+      { name: "Filé & Aligot", price: "R$ 79", desc: "Filé mignon with aligot (purê de queijo) e molho demi-glace." },
       { name: "File Demi & Parma", price: "R$ 66", desc: "Filé mignon com molho demi-glace, fettuccine grano duro e farofa de parma." },
       { name: "Risoto de Filé e Funghi", price: "R$ 84", desc: "Arroz arbóreo, tiras de filé mignon e funghi porcini." }
     ],
