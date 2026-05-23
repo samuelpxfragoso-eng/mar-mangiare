@@ -596,6 +596,8 @@ const CucinaSection = () => {
   const [activeTab, setActiveTab] = useState('entradas');
 
   const cucinaImages = [
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779559861/WhatsApp_Image_2026-05-23_at_3.08.40_PM_1_hzyry6.jpg",
+    "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779559861/WhatsApp_Image_2026-05-23_at_3.08.40_PM_l04dzj.jpg",
     "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779158988/WhatsApp_Image_2026-05-18_at_11.45.16_PM_1_jhq6vp.jpg",
     "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779158988/WhatsApp_Image_2026-05-18_at_11.45.16_PM_j30b0u.jpg",
     "https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779159008/WhatsApp_Image_2026-05-18_at_11.45.19_PM_1_gc9asz.jpg",
@@ -1057,7 +1059,7 @@ const GiftCardSection = () => {
                         viewport={{ once: true }}
                         className="relative group"
                     >
-                        <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl border-8 border-white relative z-10 transition-transform duration-700 group-hover:scale-[1.02]">
+                        <div className="aspect-video rounded-[40px] overflow-hidden shadow-2xl border-8 border-white relative z-10 transition-transform duration-700 group-hover:scale-[1.02]">
                             <img 
                                 src="https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779557824/WhatsApp_Image_2026-05-23_at_2.35.01_PM_ocadzo.jpg" 
                                 alt="Cartão Presente Maré Mangiare" 
