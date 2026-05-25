@@ -1486,7 +1486,7 @@ const Location = () => {
                             </div>
                         </div>
 
-                        <a href="https://maps.app.goo.gl/xxx" target="_blank" className="mt-12 w-full bg-mare-orange text-white py-5 rounded-2xl font-bold uppercase text-xs tracking-widest flex items-center justify-center gap-3 shadow-xl hover:scale-[1.02] transition-all">
+                        <a href="https://www.google.com/maps/place/mar%C3%A9+mangiare/data=!4m2!3m1!1s0x701554c34a1a321:0xbbe40aa0d2277b5d?sa=X&ved=1t:242&ictx=111" target="_blank" className="mt-12 w-full bg-mare-orange text-white py-5 rounded-2xl font-bold uppercase text-xs tracking-widest flex items-center justify-center gap-3 shadow-xl hover:scale-[1.02] transition-all">
                              Como Chegar <ChevronRight size={18} />
                         </a>
                     </div>
