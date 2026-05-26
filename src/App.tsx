@@ -1300,53 +1300,98 @@ const ChefSection = () => {
   );
 };
 
-const GoogleEvaluation = () => {
+const ReviewEvaluations = () => {
     return (
-        <section className="py-24 bg-mare-cream relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-16">
-                <motion.div 
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    className="flex-1 text-center md:text-left"
-                >
-                    <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
-                        <Star className="text-mare-orange" size={20} fill="currentColor" />
-                        <span className="text-mare-orange font-bold text-[10px] uppercase tracking-[0.3em] italic">Visto no Google</span>
-                    </div>
-                    <h2 className="text-4xl md:text-7xl text-mare-navy serif italic leading-tight mb-8">
-                        Sua <span className="text-mare-gold">Avaliação</span> <br />é o Nosso Combustível
-                    </h2>
-                    <p className="text-mare-navy/60 text-lg md:text-xl font-medium mb-12 italic leading-relaxed max-w-xl">
-                        Cada recomendação nos ajuda a manter a tradição e o amor que colocamos em cada pizza. Sua opinião é fundamental para que mais pessoas conheçam o sabor inesquecível do Maré.
-                    </p>
-                    <a 
-                        href="https://www.google.com/search?q=Mare+Mangiare+Praia+do+Frances+Avaliações" 
-                        target="_blank"
-                        className="btn-shine btn-ifood px-12 py-6 rounded-full font-bold text-xs uppercase tracking-[0.2em] shadow-2xl inline-flex items-center gap-4 hover:scale-105 active:scale-95 transition-all"
+        <>
+            <section className="py-24 bg-mare-cream relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-16">
+                    <motion.div 
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        className="flex-1 text-center md:text-left"
                     >
-                        <Star size={18} fill="currentColor" /> AVALIAR NO GOOGLE AGORA
-                    </a>
-                </motion.div>
+                        <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
+                            <Star className="text-mare-orange" size={20} fill="currentColor" />
+                            <span className="text-mare-orange font-bold text-[10px] uppercase tracking-[0.3em] italic">Visto no Google</span>
+                        </div>
+                        <h2 className="text-4xl md:text-7xl text-mare-navy serif italic leading-tight mb-8">
+                            Sua <span className="text-mare-gold">Avaliação</span> <br />é o Nosso Combustível
+                        </h2>
+                        <p className="text-mare-navy/60 text-lg md:text-xl font-medium mb-12 italic leading-relaxed max-w-xl">
+                            Cada recomendação nos ajuda a manter a tradição e o amor que colocamos em cada pizza. Sua opinião é fundamental para que mais pessoas conheçam o sabor inesquecível do Maré.
+                        </p>
+                        <a 
+                            href="https://www.google.com/search?q=Mare+Mangiare+Praia+do+Frances+Avaliações" 
+                            target="_blank"
+                            className="btn-shine btn-ifood px-12 py-6 rounded-full font-bold text-xs uppercase tracking-[0.2em] shadow-2xl inline-flex items-center gap-4 hover:scale-105 active:scale-95 transition-all"
+                        >
+                            <Star size={18} fill="currentColor" /> AVALIAR NO GOOGLE AGORA
+                        </a>
+                    </motion.div>
+                    
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        className="flex-1 relative"
+                    >
+                        <div className="logo-shine logo-reflection logo-float bg-white/20 p-2 rounded-[40px] backdrop-blur-sm border border-white/30 shadow-2xl relative">
+                            <img 
+                                src="https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779154598/WhatsApp_Image_2026-05-18_at_10.29.56_PM_1_gd7arl.jpg" 
+                                alt="Maré Evaluation Google" 
+                                className="w-full rounded-[30px] shadow-inner"
+                                referrerPolicy="no-referrer"
+                            />
+                        </div>
+                    </motion.div>
+                </div>
                 
-                <motion.div 
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    className="flex-1 relative"
-                >
-                    <div className="logo-shine logo-reflection logo-float bg-white/20 p-2 rounded-[40px] backdrop-blur-sm border border-white/30 shadow-2xl relative">
-                        <img 
-                            src="https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779154598/WhatsApp_Image_2026-05-18_at_10.29.56_PM_1_gd7arl.jpg" 
-                            alt="Maré Evaluation" 
-                            className="w-full rounded-[30px] shadow-inner"
-                        />
-                    </div>
-                </motion.div>
-            </div>
-            
-            {/* Background decorative elements */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-mare-orange/5 rounded-full blur-[100px] -z-0" />
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-mare-teal/5 rounded-full blur-[100px] -z-0" />
-        </section>
+                <div className="absolute top-0 right-0 w-96 h-96 bg-mare-orange/5 rounded-full blur-[100px] -z-0" />
+                <div className="absolute bottom-0 left-0 w-96 h-96 bg-mare-teal/5 rounded-full blur-[100px] -z-0" />
+            </section>
+
+            <section className="py-24 bg-white relative overflow-hidden">
+                <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row-reverse items-center gap-16">
+                    <motion.div 
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        className="flex-1 text-center md:text-left"
+                    >
+                        <div className="flex items-center justify-center md:justify-start gap-2 mb-6">
+                            <Star className="text-[#34E0A1]" size={20} fill="currentColor" />
+                            <span className="text-[#34E0A1] font-bold text-[10px] uppercase tracking-[0.3em] italic">Visto no Tripadvisor</span>
+                        </div>
+                        <h2 className="text-4xl md:text-7xl text-mare-navy serif italic leading-tight mb-8">
+                            Recomende no <span className="text-[#34E0A1]">Tripadvisor</span>
+                        </h2>
+                        <p className="text-mare-navy/60 text-lg md:text-xl font-medium mb-12 italic leading-relaxed max-w-xl">
+                            Compartilhe sua experiência gastronômica com viajantes de todo o mundo. Sua avaliação no Tripadvisor é o que nos faz ser destino obrigatório na Praia do Francês.
+                        </p>
+                        <a 
+                            href="https://www.tripadvisor.com.br/ClientLink?value=TjFkXy9Vc2VyUmV2aWV3RWRpdC1nMjAxMTk4MC1kMjc3MjkxMTEtUmVzdGF1cmFudGVfTWFyZV9NYW5naWFyZS1NYXJlY2hhbF9EZW9kb3JvX1N0YXRlX29mX0FsYWdvYXMuaHRtbF9lTVU%3D" 
+                            target="_blank"
+                            className="btn-shine bg-[#34E0A1] text-mare-navy px-12 py-6 rounded-full font-bold text-xs uppercase tracking-[0.2em] shadow-2xl inline-flex items-center gap-4 hover:scale-105 active:scale-95 transition-all"
+                        >
+                            <Star size={18} fill="currentColor" /> AVALIAR NO TRIPADVISOR
+                        </a>
+                    </motion.div>
+                    
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        className="flex-1 relative"
+                    >
+                        <div className="logo-shine logo-reflection logo-float bg-mare-navy/5 p-2 rounded-[40px] backdrop-blur-sm border border-mare-navy/10 shadow-2xl relative">
+                            <img 
+                                src="https://res.cloudinary.com/dqfnkztbe/image/upload/q_auto/f_auto/v1779807068/WhatsApp_Image_2026-05-26_at_11.40.30_AM_f1znb0.jpg" 
+                                alt="Maré Evaluation Tripadvisor" 
+                                className="w-full rounded-[30px] shadow-inner"
+                                referrerPolicy="no-referrer"
+                            />
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
+        </>
     );
 };
 
@@ -1594,7 +1639,7 @@ export default function App() {
       <ExperienceGallery />
       <GiftCardSection />
       <ChefSection />
-      <GoogleEvaluation />
+      <ReviewEvaluations />
       <FAQSection />
       <Location />
       <Footer />
